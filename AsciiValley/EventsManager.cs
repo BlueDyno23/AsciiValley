@@ -21,9 +21,10 @@ namespace AsciiValley
             this.interactions = interactions;
         }
 
-        public void FireEvents()
+        public void EventsListener()
         {
             interactions.CellChanged += game.OnCellChanged;
+            interactions.CellChanged += player.AddItem;
         }
     }
 }

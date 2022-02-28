@@ -22,6 +22,12 @@ namespace AsciiValley
             Console.ReadKey(true);
             Console.Clear();
 
+            string prompt = "ASCII-VALLEY";
+            string[] options = {"PLAY","ABOUT","EXIT"};
+
+            Menu mainMenu = new Menu(prompt, options);
+            mainMenu.Run();
+
             player = new Player();
             world = new World();
 
@@ -57,17 +63,21 @@ namespace AsciiValley
         private void MenuDraw()
         {
             string title = "ASCII-VALLEY";
-
+            Console.ResetColor();
             Console.SetCursorPosition(World.sizeX+15,2);
             for (int i = 0; i < title.Length; i++)
             {
                 Console.Write(title[i] + "  ");
             }
+            Console.SetCursorPosition(World.sizeX + 15, 4);
+            Console.Write(player.item.name+"\t"+player.item.quantity);
         }
 
         public void OnCellChanged(object source, EventArgs e)
         {
+            Item veg = new Item("veggie");
             Console.SetCursorPosition(player.X + 1,player.Y);
+            Console.BackgroundColor = Color.FromArgb(38, 38, 38);
             Console.Write("#");
         }
 
@@ -78,8 +88,8 @@ namespace AsciiValley
             MenuDraw();
             while (true)
             {
-                
-                eventsManager.FireEvents();
+                MenuDraw();
+                eventsManager.EventsListener();
                 Console.CursorVisible = false;
                 if (interactions.Inputs())
                 {
