@@ -15,9 +15,13 @@ namespace AsciiValley
         public int Y { get; set; }
         public int lastX;
         public int lastY;
+
         private string marker = "O";
         private Color color = Color.FromArgb(255, 221, 153);
         private Color bg = Color.FromArgb(38, 38, 38);
+
+        public string name { get; set; }
+
 
         public Item item = new Item("veg");
 

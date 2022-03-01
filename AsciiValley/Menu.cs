@@ -20,6 +20,7 @@ namespace AsciiValley
 
         private void DisplayOptions()
         {
+            Console.CursorVisible = false;
             Console.SetCursorPosition((Console.WindowWidth/2),0);
             Console.WriteLine(prompt+"\n");
             for (int i = 0; i < options.Length; i++)
@@ -29,19 +30,20 @@ namespace AsciiValley
                     Console.SetCursorPosition((Console.WindowWidth / 2), i+2);
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.WriteLine($"<<{options[i]}>>");
+                    Console.WriteLine($"<< {options[i]} >>");
                 }
                 else
                 {
                     Console.SetCursorPosition((Console.WindowWidth / 2), i+2);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Black;
-                    Console.WriteLine($"<<{options[i]}>>");
+                    Console.WriteLine($"<< {options[i]} >>");
                 }
                 Console.ResetColor();
             }
         }
 
+        //
         public int Run()
         {
             ConsoleKey key;
@@ -77,6 +79,7 @@ namespace AsciiValley
             }
             while (key != ConsoleKey.Escape);
 
+            Environment.Exit(0);
             return 0;
         }
     }

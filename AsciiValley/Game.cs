@@ -11,28 +11,76 @@ namespace AsciiValley
 {
     class Game
     {
+        // instantiate classes and variables
+
         Player player;
         World world;
         Interactions interactions;
         EventsManager eventsManager;
 
+        // public method that executes the entire class
         public void Start()
         {
+            // execute player and world constructors and give them values
+            player = new Player(4,4);
+            world = new World();
+
+
+            // to avoid buffer and window size bugs caused by Console.SetCursorPosition
+            Console.CursorVisible = false;
             Console.WriteLine("Adjust window size and press any key to continue..");
             Console.ReadKey(true);
             Console.Clear();
 
+
+            // start the main menu
+            // TODO: make the buttons do stuff instead of just ignoring them
             string prompt = "ASCII-VALLEY";
             string[] options = {"PLAY","ABOUT","EXIT"};
-
             Menu mainMenu = new Menu(prompt, options);
-            mainMenu.Run();
+            int selectedOption = mainMenu.Run();
+            switch (selectedOption)
+            {
+                case 0:
+                    break;
+                case 1:
+                    Console.Clear();
+                    string aboutText = @"\hi,
+\this game was made by me and\was inspired by stardew valley
+\i know its not a lot but i consider
+\it to be an achievement
+\ 
+\thx, eyal";
+                    int height = 1;
+                    Console.SetCursorPosition((Console.WindowWidth / 2), 0);
+                    Console.WriteLine("ABOUT: ");
+                    for (int i = 0; i < aboutText.Length; i++)
+                    {
+                        if(aboutText[i] == '\\')
+                        {
+                            Console.SetCursorPosition((Console.WindowWidth / 2), height+=1);
+                            Console.Write(aboutText[i+1]);
+                            i += 1;
+                        }
+                        else
+                        {
+                            Console.Write(aboutText[i]);
+                        }
+                    }
+                    System.Console.WriteLine();
+                    Console.ReadKey(true);
+                    Environment.Exit(1);
+                    break;
+                case 2:
+                    Environment.Exit(0);
+                    break;
+            }
 
-            player = new Player();
-            world = new World();
-
+            //instantiate the interactions class
             interactions = new Interactions(world, player);
 
+
+            // load the world, and draw it for the first time, also hard coded player location
             World.LoadMap();
             world.DrawMap();
             player.Draw(4,4);
