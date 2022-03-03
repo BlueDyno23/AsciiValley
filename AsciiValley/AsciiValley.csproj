@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Colorful.Console, Version=1.2.15.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Colorful.Console.1.2.15\lib\net461\Colorful.Console.dll</HintPath>
@@ -50,7 +53,6 @@
     <Compile Include="EventsManager.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Interactions.cs" />
-    <Compile Include="Item.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

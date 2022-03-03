@@ -24,7 +24,6 @@ namespace AsciiValley
         public void EventsListener()
         {
             interactions.CellChanged += game.OnCellChanged;
-            interactions.CellChanged += player.AddItem;
         }
     }
 }

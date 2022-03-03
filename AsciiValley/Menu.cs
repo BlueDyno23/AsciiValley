@@ -43,7 +43,17 @@ namespace AsciiValley
             }
         }
 
-        //
+        /*private void DisplayParameters()
+        {
+            Console.CursorVisible = false;
+            Console.SetCursorPosition((Console.WindowWidth / 2), 0);
+            Console.WriteLine(prompt + "\n");
+            for (int i = 0; i < length; i++)
+            {
+
+            }
+        }*/
+
         public int Run()
         {
             ConsoleKey key;

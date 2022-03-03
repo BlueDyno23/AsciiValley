@@ -81,7 +81,7 @@ namespace AsciiValley
         private void Planting()
         {
 
-            if (world.GetElement(player.X, player.Y) == " " || world.isNonCollidable(player.X, player.Y))
+            if (world.GetElement(player.X+1, player.Y) == " " || world.isNonCollidable(player.X+1, player.Y))
             {
                 world.SetElement(player.X+1, player.Y, '#');
                 OnCellChanged();

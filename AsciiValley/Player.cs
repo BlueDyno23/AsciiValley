@@ -17,13 +17,10 @@ namespace AsciiValley
         public int lastY;
 
         private string marker = "O";
-        private Color color = Color.FromArgb(255, 221, 153);
-        private Color bg = Color.FromArgb(38, 38, 38);
+        public Color color = Color.FromArgb(255, 221, 153);
+        public Color bgColor = Color.FromArgb(38, 38, 38);
 
         public string name { get; set; }
-
-
-        public Item item = new Item("veg");
 
         public Player()
         {
@@ -41,20 +38,15 @@ namespace AsciiValley
             X = x;
             Y = y;
             Console.SetCursorPosition(x, y);
-            Console.BackgroundColor = Color.FromArgb(38, 38, 38);
+            Console.BackgroundColor = bgColor;
             Console.Write(marker, color);
         }
 
         public void Draw()
         {
             Console.SetCursorPosition(X, Y);
-            Console.BackgroundColor = Color.FromArgb(38, 38, 38);
+            Console.BackgroundColor = bgColor;
             Console.Write(marker,color);
-        }
-
-        public void AddItem(object source, EventArgs e)
-        {
-            item.quantity += 1;
         }
     }
 }

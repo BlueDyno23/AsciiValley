@@ -1,0 +1,9 @@
+C:\development\Games\AsciiValley\AsciiValley\bin\Release\AsciiValley.dll.config
+C:\development\Games\AsciiValley\AsciiValley\bin\Release\AsciiValley.dll
+C:\development\Games\AsciiValley\AsciiValley\bin\Release\AsciiValley.pdb
+C:\development\Games\AsciiValley\AsciiValley\bin\Release\Colorful.Console.dll
+C:\development\Games\AsciiValley\AsciiValley\obj\Release\AsciiValley.csproj.AssemblyReference.cache
+C:\development\Games\AsciiValley\AsciiValley\obj\Release\AsciiValley.csproj.CoreCompileInputs.cache
+C:\development\Games\AsciiValley\AsciiValley\obj\Release\AsciiValley.csproj.CopyComplete
+C:\development\Games\AsciiValley\AsciiValley\obj\Release\AsciiValley.dll
+C:\development\Games\AsciiValley\AsciiValley\obj\Release\AsciiValley.pdb

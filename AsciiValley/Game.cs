@@ -17,6 +17,7 @@ namespace AsciiValley
         World world;
         Interactions interactions;
         EventsManager eventsManager;
+        Color backgroundColor = Color.FromArgb(38, 38, 38);
 
         // public method that executes the entire class
         public void Start()
@@ -42,6 +43,7 @@ namespace AsciiValley
             switch (selectedOption)
             {
                 case 0:
+
                     break;
                 case 1:
                     Console.Clear();
@@ -118,14 +120,13 @@ namespace AsciiValley
                 Console.Write(title[i] + "  ");
             }
             Console.SetCursorPosition(World.sizeX + 15, 4);
-            Console.Write(player.item.name+"\t"+player.item.quantity);
+            
         }
 
         public void OnCellChanged(object source, EventArgs e)
         {
-            Item veg = new Item("veggie");
             Console.SetCursorPosition(player.X + 1,player.Y);
-            Console.BackgroundColor = Color.FromArgb(38, 38, 38);
+            Console.BackgroundColor = backgroundColor;
             Console.Write("#");
         }
 
